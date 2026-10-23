@@ -345,6 +345,12 @@ one. Orbio stores an account id and never a social credential.
 - **MCP**, hosted at `https://api.orbio.so/api/mcp`, for a model in any client.
   No install, no key on disk, and it can never sign.
 - **The Claude Code plugin**, which is that server plus skills and a command.
+- **Private inference**, `@orbiodotso/incognito`: your prompt is encrypted in your own
+  process to a confidential provider's verified enclave (Phala or NEAR AI), and the answer
+  is verified and decrypted there too, so Orbio relays ciphertext and never reads it. Name a
+  model and its provider, or a mode (`auto`, `cheapest`, `fastest`) and Orbio's privacy
+  router picks one without decrypting anything. Same API key; see
+  [the setup guide](https://www.orbio.so/incognito/setup.md).
 
 Use the SDK when you are writing code, MCP when a model is driving.
 
